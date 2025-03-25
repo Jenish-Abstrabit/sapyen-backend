@@ -1,7 +1,7 @@
 const { PutCommand, GetCommand, QueryCommand, DeleteCommand, ScanCommand } = require('@aws-sdk/lib-dynamodb');
 const { ddbDocClient } = require('../config/database');
 
-const TABLE_NAME = 'user_typeform_airtable_data';
+const TABLE_NAME = 'user_data';
 
 // Ref values for field extraction
 const FIELD_REFS = {
@@ -14,7 +14,7 @@ const FIELD_REFS = {
 
 class TypeformResponse {
   static validateResponse(data) {
-    const requiredFields = ['response_id', 'landing_id', 'response_type'];
+    const requiredFields = ['registrationNumber'];
     for (const field of requiredFields) {
       if (!data[field]) {
         throw new Error(`Missing required field: ${field}`);
@@ -22,42 +22,26 @@ class TypeformResponse {
     }
   }
 
-  static extractFieldValue(answers, ref) {
-    const answer = answers.find(a => a.field.ref === ref);
-    if (!answer) return null;
-    
-    // Handle different answer types
-    switch (answer.type) {
-      case 'text':
-        return answer.text;
-      case 'email':
-        return answer.email;
-      case 'phone_number':
-        return answer.phone_number;
-      default:
-        return null;
-    }
-  }
-
   static async create(data) {
     this.validateResponse(data);
-    
-    // Extract fields from answers using ref values
-    const extractedFields = {
-      first_name: this.extractFieldValue(data.answers, FIELD_REFS.firstName),
-      last_name: this.extractFieldValue(data.answers, FIELD_REFS.lastName),
-      registration_number: this.extractFieldValue(data.answers, FIELD_REFS.registrationNumber),
-      email: this.extractFieldValue(data.answers, FIELD_REFS.email),
-      phone_number: this.extractFieldValue(data.answers, FIELD_REFS.phoneNumber)
-    };
     
     const params = {
       TableName: TABLE_NAME,
       Item: {
-        response_id: data.response_id,
-        landing_id: data.landing_id,
-        response_type: data.response_type,
-        ...extractedFields
+        registration_number: data.registrationNumber,
+        response_id: data.responseId || null,
+        first_name: data.firstName || '',
+        last_name: data.lastName || '',
+        email: data.email || '',
+        phone_number: data.phoneNumber || '',
+        landing_id: data.landingId || '',
+        response_type: data.responseType || '',
+        // Only specified Airtable fields
+        vial1_volume: data.vial1Volume || '',
+        vial2_volume: data.vial2Volume || '',
+        total_motility: data.totalMotility || 0,
+        morphology: data.morphology || 0,
+        created_at: new Date().toISOString()
       }
     };
 
@@ -65,20 +49,20 @@ class TypeformResponse {
       await ddbDocClient.send(new PutCommand(params));
       return params.Item;
     } catch (error) {
-      console.error('Error creating typeform response:', error);
+      console.error('Error creating merged record:', error);
       throw error;
     }
   }
 
-  static async getByResponseId(responseId) {
-    if (!responseId) {
-      throw new Error('Response ID is required');
+  static async getByRegistrationNumber(registrationNumber) {
+    if (!registrationNumber) {
+      throw new Error('Registration number is required');
     }
 
     const params = {
       TableName: TABLE_NAME,
       Key: {
-        response_id: responseId
+        registration_number: registrationNumber
       }
     };
 
@@ -86,7 +70,7 @@ class TypeformResponse {
       const { Item } = await ddbDocClient.send(new GetCommand(params));
       return Item;
     } catch (error) {
-      console.error('Error getting typeform response:', error);
+      console.error('Error getting record:', error);
       throw error;
     }
   }
@@ -101,7 +85,7 @@ class TypeformResponse {
       const { Items } = await ddbDocClient.send(new ScanCommand(params));
       return Items || [];
     } catch (error) {
-      console.error('Error scanning typeform responses:', error);
+      console.error('Error scanning records:', error);
       throw error;
     }
   }
@@ -128,15 +112,15 @@ class TypeformResponse {
     }
   }
 
-  static async delete(responseId) {
-    if (!responseId) {
-      throw new Error('Response ID is required');
+  static async delete(registrationNumber) {
+    if (!registrationNumber) {
+      throw new Error('Registration number is required');
     }
 
     const params = {
       TableName: TABLE_NAME,
       Key: {
-        response_id: responseId
+        registration_number: registrationNumber
       }
     };
 
@@ -144,7 +128,7 @@ class TypeformResponse {
       await ddbDocClient.send(new DeleteCommand(params));
       return true;
     } catch (error) {
-      console.error('Error deleting typeform response:', error);
+      console.error('Error deleting record:', error);
       throw error;
     }
   }

@@ -4,20 +4,39 @@ require('dotenv').config();
 const TYPEFORM_ACCESS_TOKEN = process.env.TYPEFORM_ACCESS_TOKEN;
 const FORM_ID = process.env.TYPEFORM_FORM_ID;
 
-async function fetchTypeformResponses() {
+// Debug logging
+console.log('Environment variables:');
+console.log('TYPEFORM_ACCESS_TOKEN:', TYPEFORM_ACCESS_TOKEN ? 'Present' : 'Missing');
+console.log('FORM_ID:', FORM_ID ? 'Present' : 'Missing');
+
+async function fetchAllTypeformResponses() {
   try {
-    const response = await axios.get(
-      `https://api.typeform.com/forms/${FORM_ID}/responses`,
-      {
-        headers: {
-          'Authorization': `Bearer ${TYPEFORM_ACCESS_TOKEN}`
-        },
-        params: {
-          page_size: 10 // Adjust based on your needs
+    let allResponses = [];
+    let page = 1;
+    let hasMore = true;
+
+    while (hasMore) {
+      const response = await axios.get(
+        `https://api.typeform.com/forms/${FORM_ID}/responses`,
+        {
+          headers: {
+            'Authorization': `Bearer ${TYPEFORM_ACCESS_TOKEN}`
+          },
+          params: {
+            page_size: 100,
+            page
+          }
         }
-      }
-    );
-    return response.data.items || [];
+      );
+
+      const { items, total_items, page_count } = response.data;
+      allResponses = [...allResponses, ...items];
+      
+      hasMore = page < page_count;
+      page++;
+    }
+
+    return allResponses;
   } catch (error) {
     console.error('Error fetching from Typeform:', error.message);
     throw error;
@@ -25,5 +44,5 @@ async function fetchTypeformResponses() {
 }
 
 module.exports = {
-  fetchTypeformResponses
+  fetchAllTypeformResponses
 }; 
