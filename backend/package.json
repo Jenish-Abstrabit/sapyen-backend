@@ -16,12 +16,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.775.0",
     "@aws-sdk/client-dynamodb": "^3.774.0",
     "@aws-sdk/lib-dynamodb": "^3.774.0",
     "axios": "^1.8.4",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
-    "express": "^4.18.3",
+    "express": "^4.21.2",
     "mongoose": "^8.12.2",
     "morgan": "^1.10.0"
   },

@@ -11,32 +11,48 @@ console.log('FORM_ID:', FORM_ID ? 'Present' : 'Missing');
 
 async function fetchAllTypeformResponses() {
   try {
-    let allResponses = [];
-    let page = 1;
-    let hasMore = true;
-
-    while (hasMore) {
-      const response = await axios.get(
-        `https://api.typeform.com/forms/${FORM_ID}/responses`,
-        {
-          headers: {
-            'Authorization': `Bearer ${TYPEFORM_ACCESS_TOKEN}`
-          },
-          params: {
-            page_size: 100,
-            page
-          }
+    // Make a single request with page_size=1000 to get all responses
+    const response = await axios.get(
+      `https://api.typeform.com/forms/${FORM_ID}/responses`,
+      {
+        headers: {
+          'Authorization': `Bearer ${TYPEFORM_ACCESS_TOKEN}`
+        },
+        params: {
+          page_size: 1000, // Get maximum responses in one request
+          response_type: 'completed' // Only get completed responses
         }
-      );
+      }
+    );
 
-      const { items, total_items, page_count } = response.data;
-      allResponses = [...allResponses, ...items];
-      
-      hasMore = page < page_count;
-      page++;
+    const { items, total_items } = response.data;
+    
+    console.log(`\nTypeform API Response:`);
+    console.log(`Total items reported by API: ${total_items}`);
+    console.log(`Items received: ${items.length}`);
+
+    // Validate total number of responses
+    if (items.length !== total_items) {
+      console.warn(`\nWarning: Response count mismatch!`);
+      console.warn(`Expected ${total_items} responses but got ${items.length}`);
     }
 
-    return allResponses;
+    // Check for duplicate response IDs
+    const responseIds = new Set();
+    const duplicates = [];
+    items.forEach(response => {
+      if (responseIds.has(response.response_id)) {
+        duplicates.push(response.response_id);
+      }
+      responseIds.add(response.response_id);
+    });
+
+    if (duplicates.length > 0) {
+      console.warn(`\nWarning: Found ${duplicates.length} duplicate response IDs:`);
+      duplicates.forEach(id => console.warn(`- ${id}`));
+    }
+
+    return items;
   } catch (error) {
     console.error('Error fetching from Typeform:', error.message);
     throw error;

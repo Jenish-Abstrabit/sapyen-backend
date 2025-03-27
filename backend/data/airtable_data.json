@@ -1,0 +1,1199 @@
+[
+  {
+    "registration_number": "2316628",
+    "data": {
+      "vial1_volume": "2.8",
+      "vial2_volume": "3.8",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "2316118",
+    "data": {
+      "vial1_volume": "0.1",
+      "vial2_volume": "3.8",
+      "total_motility": 0.15,
+      "morphology": 0.01
+    }
+  },
+  {
+    "registration_number": "2316768",
+    "data": {
+      "vial1_volume": "0.4",
+      "vial2_volume": "3.7",
+      "total_motility": 0.09,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "2316978",
+    "data": {
+      "vial1_volume": "3.2",
+      "vial2_volume": "3.8",
+      "total_motility": 0.27,
+      "morphology": 0.01
+    }
+  },
+  {
+    "registration_number": "2316238",
+    "data": {
+      "vial1_volume": "2.0",
+      "vial2_volume": "3.9",
+      "total_motility": 0.33,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "2316708",
+    "data": {
+      "vial1_volume": "4.1",
+      "vial2_volume": "3.8",
+      "total_motility": 0.14,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "53R7359",
+    "data": {
+      "vial1_volume": "1.7",
+      "vial2_volume": "2.6",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "2316818",
+    "data": {
+      "vial1_volume": "0.1",
+      "vial2_volume": "4.1",
+      "total_motility": 0.2,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "2316928",
+    "data": {
+      "vial1_volume": "3.0",
+      "vial2_volume": "3.7",
+      "total_motility": 0.23,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "2316918",
+    "data": {
+      "vial1_volume": "2.1",
+      "vial2_volume": "3.8",
+      "total_motility": 0.11,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "2316588",
+    "data": {
+      "vial1_volume": "0.6",
+      "vial2_volume": "3.7",
+      "total_motility": 0.23,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "2316028",
+    "data": {
+      "vial1_volume": "4.8",
+      "vial2_volume": "1.8",
+      "total_motility": 0,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "2316728",
+    "data": {
+      "vial1_volume": "4.1",
+      "vial2_volume": "4.0",
+      "total_motility": 0.1,
+      "morphology": 0.01
+    }
+  },
+  {
+    "registration_number": "2316338",
+    "data": {
+      "vial1_volume": "0.9",
+      "vial2_volume": "3.7",
+      "total_motility": 0.09,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "2316718",
+    "data": {
+      "vial1_volume": "2.0",
+      "vial2_volume": "3.8",
+      "total_motility": 0.35,
+      "morphology": 0.06
+    }
+  },
+  {
+    "registration_number": "2316318",
+    "data": {
+      "vial1_volume": "5.3",
+      "vial2_volume": "3.6",
+      "total_motility": 0.02,
+      "morphology": 0.04
+    }
+  },
+  {
+    "registration_number": "2316328",
+    "data": {
+      "vial1_volume": "2.1",
+      "vial2_volume": "3.8",
+      "total_motility": 0.05,
+      "morphology": 0.01
+    }
+  },
+  {
+    "registration_number": "2316468",
+    "data": {
+      "vial1_volume": "7.8",
+      "vial2_volume": "3.7",
+      "total_motility": 0.07,
+      "morphology": 0.04
+    }
+  },
+  {
+    "registration_number": "53I1927",
+    "data": {
+      "vial1_volume": "2.1",
+      "vial2_volume": "3.7",
+      "total_motility": 0.35,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "48Q7184",
+    "data": {
+      "vial1_volume": "6.9",
+      "vial2_volume": "3.8",
+      "total_motility": 0.09,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "49J7737",
+    "data": {
+      "vial1_volume": "0.3",
+      "vial2_volume": "3.8",
+      "total_motility": 0.29,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "63Z3746",
+    "data": {
+      "vial1_volume": "2.9",
+      "vial2_volume": "3.8",
+      "total_motility": 0.2,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "15Z6344",
+    "data": {
+      "vial1_volume": "1.4",
+      "vial2_volume": "3.8",
+      "total_motility": 0,
+      "morphology": 0.01
+    }
+  },
+  {
+    "registration_number": "34L7153",
+    "data": {
+      "vial1_volume": "1.9",
+      "vial2_volume": "3.7",
+      "total_motility": 0.06,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "57S9484",
+    "data": {
+      "vial1_volume": "3.8",
+      "vial2_volume": "3.9",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "31Z6456",
+    "data": {
+      "vial1_volume": "0.4",
+      "vial2_volume": "3.8",
+      "total_motility": 0.06,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "65F2597",
+    "data": {
+      "vial1_volume": "1.9",
+      "vial2_volume": "3.8",
+      "total_motility": 0.18,
+      "morphology": 0.1
+    }
+  },
+  {
+    "registration_number": "87Y6298",
+    "data": {
+      "vial1_volume": "4.0",
+      "vial2_volume": "3.8",
+      "total_motility": 0.42,
+      "morphology": 0.04
+    }
+  },
+  {
+    "registration_number": "99X7361",
+    "data": {
+      "vial1_volume": "3.1",
+      "vial2_volume": "3.7",
+      "total_motility": 0.26,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "75J9358",
+    "data": {
+      "vial1_volume": "2.3",
+      "vial2_volume": "3.7",
+      "total_motility": 0.17,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "85L4798",
+    "data": {
+      "vial1_volume": "0.4",
+      "vial2_volume": "3.7",
+      "total_motility": 0.28,
+      "morphology": 0.06
+    }
+  },
+  {
+    "registration_number": "77S2351",
+    "data": {
+      "vial1_volume": "1.5",
+      "vial2_volume": "3.8",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "33X4533",
+    "data": {
+      "vial1_volume": "1.5",
+      "vial2_volume": "3.7",
+      "total_motility": 0.33,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "72U5318",
+    "data": {
+      "vial1_volume": "1.2",
+      "vial2_volume": "3.8",
+      "total_motility": 0.27,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "34F8577",
+    "data": {
+      "vial1_volume": "2.1",
+      "vial2_volume": "3.8",
+      "total_motility": 0,
+      "morphology": 0.01
+    }
+  },
+  {
+    "registration_number": "89E4947",
+    "data": {
+      "vial1_volume": "2.0",
+      "vial2_volume": "3.8",
+      "total_motility": 0.16,
+      "morphology": 0.06
+    }
+  },
+  {
+    "registration_number": "19E9338",
+    "data": {
+      "vial1_volume": "0.7",
+      "vial2_volume": "3.8",
+      "total_motility": 0.47,
+      "morphology": 0.08
+    }
+  },
+  {
+    "registration_number": "77E6625",
+    "data": {
+      "vial1_volume": "5.5",
+      "vial2_volume": "3.8",
+      "total_motility": 0.1,
+      "morphology": 0.04
+    }
+  },
+  {
+    "registration_number": "15B9531",
+    "data": {
+      "vial1_volume": "0.7",
+      "vial2_volume": "3.9",
+      "total_motility": 0,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "15X7176",
+    "data": {
+      "vial1_volume": "3.6",
+      "vial2_volume": "3.7",
+      "total_motility": 0.09,
+      "morphology": 0.06
+    }
+  },
+  {
+    "registration_number": "31I8654",
+    "data": {
+      "vial1_volume": "3.6",
+      "vial2_volume": "3.7",
+      "total_motility": 0.33,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "18K4834",
+    "data": {
+      "vial1_volume": "1.5",
+      "vial2_volume": "3.9",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "27J4711",
+    "data": {
+      "vial1_volume": "3.5",
+      "vial2_volume": "3.8",
+      "total_motility": 0.02,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "95C2112",
+    "data": {
+      "vial1_volume": "4.6",
+      "vial2_volume": "2.9",
+      "total_motility": 0.17,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "61W8892",
+    "data": {
+      "vial1_volume": "3.5",
+      "vial2_volume": "3.7",
+      "total_motility": 0.25,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "75B9153",
+    "data": {
+      "vial1_volume": "1.4",
+      "vial2_volume": "3.8",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "81E8483",
+    "data": {
+      "vial1_volume": "0.3",
+      "vial2_volume": "3.8",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "53O7364",
+    "data": {
+      "vial1_volume": "4.2",
+      "vial2_volume": "1.5",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "15I3432",
+    "data": {
+      "vial1_volume": "0.1",
+      "vial2_volume": "3.7",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "67G9781",
+    "data": {
+      "vial1_volume": "0.4",
+      "vial2_volume": "3.9",
+      "total_motility": 0,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "28s4441",
+    "data": {
+      "vial1_volume": "4.2",
+      "vial2_volume": "3.9",
+      "total_motility": 0,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "81D8946",
+    "data": {
+      "vial1_volume": "1.3",
+      "vial2_volume": "4.0",
+      "total_motility": 0.0184,
+      "morphology": 0.07
+    }
+  },
+  {
+    "registration_number": "41V5195",
+    "data": {
+      "vial1_volume": "3.4",
+      "vial2_volume": "3.7",
+      "total_motility": 0,
+      "morphology": 0.07
+    }
+  },
+  {
+    "registration_number": "18K6525",
+    "data": {
+      "vial1_volume": "0.1",
+      "vial2_volume": "3.7",
+      "total_motility": 0,
+      "morphology": 0.08
+    }
+  },
+  {
+    "registration_number": "85J7178",
+    "data": {
+      "vial1_volume": "1.8",
+      "vial2_volume": "3.7",
+      "total_motility": 0,
+      "morphology": 0.06
+    }
+  },
+  {
+    "registration_number": "68H6928",
+    "data": {
+      "vial1_volume": "3.2",
+      "vial2_volume": "3.8",
+      "total_motility": 0,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "54X1111",
+    "data": {
+      "vial1_volume": "0.5",
+      "vial2_volume": "3.9",
+      "total_motility": 0,
+      "morphology": 0.04
+    }
+  },
+  {
+    "registration_number": "98F9179",
+    "data": {
+      "vial1_volume": "0",
+      "vial2_volume": "4.0",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "78P8862",
+    "data": {
+      "vial1_volume": "2.6",
+      "vial2_volume": "3.8",
+      "total_motility": 0.19,
+      "morphology": 0.06
+    }
+  },
+  {
+    "registration_number": "76T1548",
+    "data": {
+      "vial1_volume": "4.2",
+      "vial2_volume": "4.0",
+      "total_motility": 0.33,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "63Q9246",
+    "data": {
+      "vial1_volume": "0.6",
+      "vial2_volume": "3.8",
+      "total_motility": 0.15,
+      "morphology": 0.08
+    }
+  },
+  {
+    "registration_number": "95V4831",
+    "data": {
+      "vial1_volume": "2.8",
+      "vial2_volume": "4.0",
+      "total_motility": 0,
+      "morphology": 0.06
+    }
+  },
+  {
+    "registration_number": "83A3739",
+    "data": {
+      "vial1_volume": "5.0",
+      "vial2_volume": "4.0",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "64H8593",
+    "data": {
+      "vial1_volume": "0.1",
+      "vial2_volume": "3.1",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "41U9554",
+    "data": {
+      "vial1_volume": "2.5",
+      "vial2_volume": "4.0",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "92W5325",
+    "data": {
+      "vial1_volume": "6.2",
+      "vial2_volume": "3.8",
+      "total_motility": 0,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "37N3824",
+    "data": {
+      "vial1_volume": "1.5",
+      "vial2_volume": "3.7",
+      "total_motility": 0,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "24U9488",
+    "data": {
+      "vial1_volume": "0.6",
+      "vial2_volume": "3.8",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "57T6112",
+    "data": {
+      "vial1_volume": "0.8",
+      "vial2_volume": "3.8",
+      "total_motility": 0.15,
+      "morphology": 0.06
+    }
+  },
+  {
+    "registration_number": "62Y2191",
+    "data": {
+      "vial1_volume": "1.8",
+      "vial2_volume": "3.8",
+      "total_motility": 0.13,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "98L1441",
+    "data": {
+      "vial1_volume": "2.4",
+      "vial2_volume": "4.1",
+      "total_motility": 0.14,
+      "morphology": 0.07
+    }
+  },
+  {
+    "registration_number": "99I5243",
+    "data": {
+      "vial1_volume": "3.2",
+      "vial2_volume": "1.8",
+      "total_motility": 0,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "88J9778",
+    "data": {
+      "vial1_volume": "2.6",
+      "vial2_volume": "4.8",
+      "total_motility": 0.15,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "84R2454",
+    "data": {
+      "vial1_volume": "1.0",
+      "vial2_volume": "4.0",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "75S3874",
+    "data": {
+      "vial1_volume": "1.8",
+      "vial2_volume": "4.0",
+      "total_motility": 0,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "82D2673",
+    "data": {
+      "vial1_volume": "4.1",
+      "vial2_volume": "1.6",
+      "total_motility": 0,
+      "morphology": 0.07
+    }
+  },
+  {
+    "registration_number": "48Q8579",
+    "data": {
+      "vial1_volume": "0.3",
+      "vial2_volume": "3.9",
+      "total_motility": 0.14,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "69Y9537",
+    "data": {
+      "vial1_volume": "3.7",
+      "vial2_volume": "4.1",
+      "total_motility": 0.16,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "19K6348",
+    "data": {
+      "vial1_volume": "3.4",
+      "vial2_volume": "4.1",
+      "total_motility": 0.17,
+      "morphology": 0.07
+    }
+  },
+  {
+    "registration_number": "11E4793",
+    "data": {
+      "vial1_volume": "0",
+      "vial2_volume": "3.9",
+      "total_motility": 0.04,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "67G9246",
+    "data": {
+      "vial1_volume": "0.7",
+      "vial2_volume": "3.6",
+      "total_motility": 0.03,
+      "morphology": 0.04
+    }
+  },
+  {
+    "registration_number": "82G7128",
+    "data": {
+      "vial1_volume": "2.4",
+      "vial2_volume": "3.5",
+      "total_motility": 0.09,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "68D4496",
+    "data": {
+      "vial1_volume": "3.8",
+      "vial2_volume": "3.8",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "15S6321",
+    "data": {
+      "vial1_volume": "1.4",
+      "vial2_volume": "4.1",
+      "total_motility": 0.09,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "53U2172",
+    "data": {
+      "vial1_volume": "2.1",
+      "vial2_volume": "3.8",
+      "total_motility": 0.04,
+      "morphology": 0.04
+    }
+  },
+  {
+    "registration_number": "36W7816",
+    "data": {
+      "vial1_volume": "2.8",
+      "vial2_volume": "3.8",
+      "total_motility": 0.1,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "24V3271",
+    "data": {
+      "vial1_volume": "3.3",
+      "vial2_volume": "3.9",
+      "total_motility": 0.01,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "14S4446",
+    "data": {
+      "vial1_volume": "2.4",
+      "vial2_volume": "3.9",
+      "total_motility": 0.11,
+      "morphology": 0.04
+    }
+  },
+  {
+    "registration_number": "53Q6795",
+    "data": {
+      "vial1_volume": "0.7",
+      "vial2_volume": "3.8",
+      "total_motility": 0.19,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "74X5435",
+    "data": {
+      "vial1_volume": "2.8",
+      "vial2_volume": "4.0",
+      "total_motility": 0,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "75R2125",
+    "data": {
+      "vial1_volume": "5.0",
+      "vial2_volume": "4.0",
+      "total_motility": 0.06,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "93G8672",
+    "data": {
+      "vial1_volume": "4.3",
+      "vial2_volume": "4.0",
+      "total_motility": 0,
+      "morphology": 0.04
+    }
+  },
+  {
+    "registration_number": "77R4325",
+    "data": {
+      "vial1_volume": "0.9",
+      "vial2_volume": "3.8",
+      "total_motility": 0.2,
+      "morphology": 0.01
+    }
+  },
+  {
+    "registration_number": "37Y9641",
+    "data": {
+      "vial1_volume": "<0.01",
+      "vial2_volume": "3.8",
+      "total_motility": 0.04,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "19N4945",
+    "data": {
+      "vial1_volume": "1.6",
+      "vial2_volume": "4.0",
+      "total_motility": 0.18,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "39X8343",
+    "data": {
+      "vial1_volume": "2.3",
+      "vial2_volume": "3.9",
+      "total_motility": 0.18,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "93F9299",
+    "data": {
+      "vial1_volume": "2.2",
+      "vial2_volume": "3.8",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "42U3916",
+    "data": {
+      "vial1_volume": "4.6",
+      "vial2_volume": "4.1",
+      "total_motility": 0.05,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "79I3164",
+    "data": {
+      "vial1_volume": "1.5",
+      "vial2_volume": "3.9",
+      "total_motility": 0.2,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "59X8919",
+    "data": {
+      "vial1_volume": "1.4",
+      "vial2_volume": "3.9",
+      "total_motility": 0.16,
+      "morphology": 0.04
+    }
+  },
+  {
+    "registration_number": "16N8177",
+    "data": {
+      "vial1_volume": "N/A",
+      "vial2_volume": "N/A",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "42Y6255",
+    "data": {
+      "vial1_volume": "2.8",
+      "vial2_volume": "4.0",
+      "total_motility": 0.38,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "95K7892",
+    "data": {
+      "vial1_volume": "2.3",
+      "vial2_volume": "4.0",
+      "total_motility": 0.24,
+      "morphology": 0.01
+    }
+  },
+  {
+    "registration_number": "98W6765",
+    "data": {
+      "vial1_volume": "0.9",
+      "vial2_volume": "4.0",
+      "total_motility": 0.06,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "82U6639",
+    "data": {
+      "vial1_volume": "3.0",
+      "vial2_volume": "4.0",
+      "total_motility": 0.03,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "66L8657",
+    "data": {
+      "vial1_volume": "1.3",
+      "vial2_volume": "3.9",
+      "total_motility": 0.21,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "83I3648",
+    "data": {
+      "vial1_volume": "2.4",
+      "vial2_volume": "4.0",
+      "total_motility": 0.21,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "44T4825",
+    "data": {
+      "vial1_volume": "3.1",
+      "vial2_volume": "3.9",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "44R1986",
+    "data": {
+      "vial1_volume": "1.8",
+      "vial2_volume": "3.9",
+      "total_motility": 0,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "11M4718",
+    "data": {
+      "vial1_volume": "1.0",
+      "vial2_volume": "3.8",
+      "total_motility": 0.31,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "86T8743",
+    "data": {
+      "vial1_volume": "1.0",
+      "vial2_volume": "3.8",
+      "total_motility": 0.2,
+      "morphology": 0.01
+    }
+  },
+  {
+    "registration_number": "89K3482",
+    "data": {
+      "vial1_volume": "1.3",
+      "vial2_volume": "3.9",
+      "total_motility": 0.17,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "95H1878",
+    "data": {
+      "vial1_volume": "5.8",
+      "vial2_volume": "0",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "95H1879",
+    "data": {
+      "vial1_volume": "5.8",
+      "vial2_volume": "0",
+      "total_motility": 0,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "62O7451",
+    "data": {
+      "vial1_volume": "5.3",
+      "vial2_volume": "4.0",
+      "total_motility": 0,
+      "morphology": 0.01
+    }
+  },
+  {
+    "registration_number": "57D4699",
+    "data": {
+      "vial1_volume": "2.4",
+      "vial2_volume": "3.8",
+      "total_motility": 0.07,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "97P7111",
+    "data": {
+      "vial1_volume": "2.5",
+      "vial2_volume": "2.9",
+      "total_motility": 0.24,
+      "morphology": 0.01
+    }
+  },
+  {
+    "registration_number": "65e3959",
+    "data": {
+      "vial1_volume": "1.3",
+      "vial2_volume": "3.8",
+      "total_motility": 0.17,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "98k3656",
+    "data": {
+      "vial1_volume": "0.2",
+      "vial2_volume": "3.8",
+      "total_motility": 0.11,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "85S1345",
+    "data": {
+      "vial1_volume": "3.7",
+      "vial2_volume": "3.8",
+      "total_motility": 0.17,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "28Y2216",
+    "data": {
+      "vial1_volume": "3.7",
+      "vial2_volume": "3.9",
+      "total_motility": 0.09,
+      "morphology": 0
+    }
+  },
+  {
+    "registration_number": "52o4368",
+    "data": {
+      "vial1_volume": "0",
+      "vial2_volume": "3.7",
+      "total_motility": 0.01,
+      "morphology": 0.06
+    }
+  },
+  {
+    "registration_number": "86B6953",
+    "data": {
+      "vial1_volume": "<0.01",
+      "vial2_volume": "6.0",
+      "total_motility": 0.05,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "95O7643",
+    "data": {
+      "vial1_volume": "2.1",
+      "vial2_volume": "3.8",
+      "total_motility": 0.2,
+      "morphology": 0.05
+    }
+  },
+  {
+    "registration_number": "45Z7267",
+    "data": {
+      "vial1_volume": "1.7",
+      "vial2_volume": "3.8",
+      "total_motility": 0.03,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "42Z8172",
+    "data": {
+      "vial1_volume": "0.9",
+      "vial2_volume": "3.8",
+      "total_motility": 0,
+      "morphology": 0.01
+    }
+  },
+  {
+    "registration_number": "93Q2723",
+    "data": {
+      "vial1_volume": "2.6",
+      "vial2_volume": "3.9",
+      "total_motility": 0.15,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "59E4597",
+    "data": {
+      "vial1_volume": "<0.1 mL",
+      "vial2_volume": "3.8 mL",
+      "total_motility": 0.23,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "43G2991",
+    "data": {
+      "vial1_volume": "4.0",
+      "vial2_volume": "2.9",
+      "total_motility": 0.44,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "96Y8763",
+    "data": {
+      "vial1_volume": "3.0",
+      "vial2_volume": "3.8",
+      "total_motility": 0.13,
+      "morphology": 0.03
+    }
+  },
+  {
+    "registration_number": "63o9721",
+    "data": {
+      "vial1_volume": "2.9",
+      "vial2_volume": "3.8",
+      "total_motility": 0.09,
+      "morphology": 0.04
+    }
+  },
+  {
+    "registration_number": "27o9921",
+    "data": {
+      "vial1_volume": "1.1",
+      "vial2_volume": "3.9",
+      "total_motility": 0,
+      "morphology": 0.02
+    }
+  },
+  {
+    "registration_number": "76G6861",
+    "data": {
+      "vial1_volume": "3.0",
+      "vial2_volume": "3.9",
+      "total_motility": 0.16,
+      "morphology": 0
+    }
+  }
+]

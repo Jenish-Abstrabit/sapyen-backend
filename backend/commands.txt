@@ -1,0 +1,1 @@
+For creating a new user: node src/scripts/createUser.js <email> <password> <username>

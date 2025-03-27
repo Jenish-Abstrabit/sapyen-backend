@@ -4,6 +4,8 @@ const cors = require('cors');
 const morgan = require('morgan');
 const { connectDB } = require('./config/database');
 const routes = require('./routes');
+const authRoutes = require('./routes/auth');
+const dataRoutes = require('./routes/data');
 const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
@@ -27,6 +29,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use('/api', routes);
+app.use('/api/auth', authRoutes);
+app.use('/api/data', dataRoutes);
 
 // Log registered routes
 console.log('Registered Routes:');
