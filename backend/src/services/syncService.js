@@ -91,18 +91,163 @@ function compareAirtableData(airtableData, dynamoData) {
   return true;
 }
 
+async function syncTypeformData() {
+  try {
+    console.log('Starting Typeform sync process...');
+
+    // Fetch data from all sources simultaneously
+    const [typeformResponses, dynamoDBItems, errorDataItems] = await Promise.all([
+      fetchAllTypeformResponses(),
+      fetchAllFromDynamoDB('typeform_data'),
+      fetchAllFromDynamoDB('error_data')
+    ]);
+
+    console.log(`Fetched ${typeformResponses.length} responses from Typeform`);
+    console.log(`Fetched ${dynamoDBItems.length} items from DynamoDB`);
+    console.log(`Fetched ${errorDataItems.length} items from error_data`);
+
+    // Process Typeform responses using TypeformSchema
+    const processedTypeformResponses = typeformResponses
+      .map(response => new TypeformSchema(response))
+      .filter(schema => schema.isValid())
+      .map(schema => ({
+        registration_number: schema.registration_number,
+        data: schema.data
+      }));
+
+    console.log(`Processed ${processedTypeformResponses.length} valid responses from Typeform`);
+
+    // Create maps for easier lookup
+    const dynamoDBMap = new Map(
+      dynamoDBItems.map(item => [item.registration_number, item])
+    );
+
+    const errorDataMap = new Map(
+      errorDataItems.map(item => [item.registration_number, item])
+    );
+
+    // Group records by registration number
+    const registrationNumberMap = new Map();
+    processedTypeformResponses.forEach(response => {
+      if (!registrationNumberMap.has(response.registration_number)) {
+        registrationNumberMap.set(response.registration_number, []);
+      }
+      registrationNumberMap.get(response.registration_number).push(response.data);
+    });
+
+    // Create a map of registration numbers that have duplicates
+    const duplicateRegistrationNumbers = new Set(
+      Array.from(registrationNumberMap.entries())
+        .filter(([_, records]) => records.length > 1)
+        .map(([regNum]) => regNum)
+    );
+
+    // Process each registration number
+    for (const [registrationNumber, records] of registrationNumberMap) {
+      if (records.length === 1) {
+        // Case 1: Unique record
+        if (!dynamoDBMap.has(registrationNumber)) {
+          // Record doesn't exist in typeform_data
+          if (errorDataMap.has(registrationNumber) && errorDataMap.get(registrationNumber).type === 'typeform') {
+            // Remove from error_data if it exists there
+            const deleteCommand = new DeleteCommand({
+              TableName: 'error_data',
+              Key: {
+                registration_number: registrationNumber
+              }
+            });
+            await docClient.send(deleteCommand);
+            console.log(`Removed ${registrationNumber} from error_data as it's now unique`);
+          }
+        }
+        // If record exists in typeform_data, do nothing
+      } else {
+        // Case 2: Duplicate records
+        if (errorDataMap.has(registrationNumber) && errorDataMap.get(registrationNumber).type === 'typeform') {
+          // Update existing record in error_data
+          console.log(`Updating duplicate record for ${registrationNumber} in error_data`);
+        } else {
+          // Add new record to error_data
+          console.log(`Adding new duplicate record for ${registrationNumber} to error_data`);
+        }
+        await storeDuplicateRecord(registrationNumber, 'typeform', records);
+      }
+    }
+
+    // Find new entries (in Typeform but not in DynamoDB)
+    const newEntries = processedTypeformResponses.filter(
+      response => !dynamoDBMap.has(response.registration_number) && !duplicateRegistrationNumbers.has(response.registration_number)
+    );
+
+    // Find deleted entries (in DynamoDB but not in Typeform, or in DynamoDB but now has duplicates)
+    const deletedEntries = dynamoDBItems.filter(
+      item => !processedTypeformResponses.some(response => response.registration_number === item.registration_number) ||
+              duplicateRegistrationNumbers.has(item.registration_number)
+    );
+
+    // Add new entries to DynamoDB
+    console.log(`\nAdding ${newEntries.length} new entries to DynamoDB...`);
+    for (const entry of newEntries) {
+      const command = new PutCommand({
+        TableName: 'typeform_data',
+        Item: {
+          registration_number: entry.registration_number,
+          data: entry.data
+        }
+      });
+      await docClient.send(command);
+      console.log(`Added entry with registration number: ${entry.registration_number}`);
+    }
+
+    // Delete removed entries from DynamoDB
+    console.log(`\nDeleting ${deletedEntries.length} entries from DynamoDB...`);
+    for (const entry of deletedEntries) {
+      const command = new DeleteCommand({
+        TableName: 'typeform_data',
+        Key: {
+          registration_number: entry.registration_number
+        }
+      });
+      await docClient.send(command);
+      console.log(`Deleted entry with registration number: ${entry.registration_number}`);
+    }
+
+    return {
+      success: true,
+      summary: {
+        totalTypeformResponses: typeformResponses.length,
+        validTypeformResponses: processedTypeformResponses.length,
+        totalDynamoDBItems: dynamoDBItems.length,
+        newEntries: newEntries.map(e => e.registration_number),
+        deletedEntries: deletedEntries.map(e => e.registration_number),
+        duplicateRegistrationNumbers: Array.from(registrationNumberMap.entries())
+          .filter(([_, records]) => records.length > 1)
+          .map(([regNum]) => regNum)
+      }
+    };
+  } catch (error) {
+    console.error('Error in syncTypeformData:', error);
+    return {
+      success: false,
+      error: error.message
+    };
+  }
+}
+
 async function syncAirtableData() {
   try {
     console.log('Starting Airtable sync process...');
 
-    // Fetch data from both sources simultaneously
-    const [airtableRecords, dynamoDBItems] = await Promise.all([
+    // Fetch data from all sources simultaneously
+    const [airtableRecords, dynamoDBItems, errorDataItems] = await Promise.all([
       fetchAllAirtableRecords(),
-      fetchAllFromDynamoDB('airtable_data')
+      fetchAllFromDynamoDB('airtable_data'),
+      fetchAllFromDynamoDB('error_data')
     ]);
 
     console.log(`Fetched ${airtableRecords.length} records from Airtable`);
     console.log(`Fetched ${dynamoDBItems.length} items from DynamoDB`);
+    console.log(`Fetched ${errorDataItems.length} items from error_data`);
 
     // Process Airtable records using AirtableSchema
     const processedAirtableRecords = airtableRecords
@@ -115,7 +260,16 @@ async function syncAirtableData() {
 
     console.log(`Processed ${processedAirtableRecords.length} valid records from Airtable`);
 
-    // Track registration numbers to identify duplicates
+    // Create maps for easier lookup
+    const dynamoDBMap = new Map(
+      dynamoDBItems.map(item => [item.registration_number, item])
+    );
+
+    const errorDataMap = new Map(
+      errorDataItems.map(item => [item.registration_number, item])
+    );
+
+    // Group records by registration number
     const registrationNumberMap = new Map();
     processedAirtableRecords.forEach(record => {
       if (!registrationNumberMap.has(record.registration_number)) {
@@ -124,51 +278,61 @@ async function syncAirtableData() {
       registrationNumberMap.get(record.registration_number).push(record.data);
     });
 
-    // Separate unique and duplicate records
-    const uniqueRecords = [];
-    const duplicateRecords = new Map();
+    // Create a map of registration numbers that have duplicates
+    const duplicateRegistrationNumbers = new Set(
+      Array.from(registrationNumberMap.entries())
+        .filter(([_, records]) => records.length > 1)
+        .map(([regNum]) => regNum)
+    );
 
-    registrationNumberMap.forEach((records, registrationNumber) => {
+    // Process each registration number
+    for (const [registrationNumber, records] of registrationNumberMap) {
       if (records.length === 1) {
-        uniqueRecords.push({
-          registration_number: registrationNumber,
-          data: records[0]
-        });
+        // Case 1: Unique record
+        if (!dynamoDBMap.has(registrationNumber)) {
+          // Record doesn't exist in airtable_data
+          if (errorDataMap.has(registrationNumber) && errorDataMap.get(registrationNumber).type === 'airtable') {
+            // Remove from error_data if it exists there
+            const deleteCommand = new DeleteCommand({
+              TableName: 'error_data',
+              Key: {
+                registration_number: registrationNumber
+              }
+            });
+            await docClient.send(deleteCommand);
+            console.log(`Removed ${registrationNumber} from error_data as it's now unique`);
+          }
+        }
+        // If record exists in airtable_data, do nothing
       } else {
-        duplicateRecords.set(registrationNumber, records);
+        // Case 2: Duplicate records
+        if (errorDataMap.has(registrationNumber) && errorDataMap.get(registrationNumber).type === 'airtable') {
+          // Update existing record in error_data
+          console.log(`Updating duplicate record for ${registrationNumber} in error_data`);
+        } else {
+          // Add new record to error_data
+          console.log(`Adding new duplicate record for ${registrationNumber} to error_data`);
+        }
+        await storeDuplicateRecord(registrationNumber, 'airtable', records);
       }
-    });
-
-    // Store duplicate records in error_data table
-    console.log(`\nStoring ${duplicateRecords.size} duplicate records in error_data table...`);
-    for (const [registrationNumber, records] of duplicateRecords) {
-      await storeDuplicateRecord(registrationNumber, 'airtable', records);
     }
 
-    // Create maps for easier lookup
-    const airtableMap = new Map(
-      uniqueRecords.map(record => [record.registration_number, record])
-    );
-
-    const dynamoDBMap = new Map(
-      dynamoDBItems.map(item => [item.registration_number, item])
-    );
-
     // Find new entries (in Airtable but not in DynamoDB)
-    const newEntries = uniqueRecords.filter(
-      record => !dynamoDBMap.has(record.registration_number)
+    const newEntries = processedAirtableRecords.filter(
+      record => !dynamoDBMap.has(record.registration_number) && !duplicateRegistrationNumbers.has(record.registration_number)
     );
 
-    // Find deleted entries (in DynamoDB but not in Airtable)
+    // Find deleted entries (in DynamoDB but not in Airtable, or in DynamoDB but now has duplicates)
     const deletedEntries = dynamoDBItems.filter(
-      item => !airtableMap.has(item.registration_number)
+      item => !processedAirtableRecords.some(record => record.registration_number === item.registration_number) ||
+              duplicateRegistrationNumbers.has(item.registration_number)
     );
 
-    // Find updated entries (in both but with different content)
-    const updatedEntries = uniqueRecords.filter(record => {
+    // Find updated entries (in both but with different content and not duplicates)
+    const updatedEntries = processedAirtableRecords.filter(record => {
       const dynamoItem = dynamoDBMap.get(record.registration_number);
       if (!dynamoItem) return false;
-      return !compareAirtableData(record.data, dynamoItem.data);
+      return !compareAirtableData(record.data, dynamoItem.data) && !duplicateRegistrationNumbers.has(record.registration_number);
     });
 
     // Add new entries to DynamoDB
@@ -216,136 +380,18 @@ async function syncAirtableData() {
       success: true,
       summary: {
         totalAirtableRecords: airtableRecords.length,
-        validAirtableRecords: uniqueRecords.length,
+        validAirtableRecords: processedAirtableRecords.length,
         totalDynamoDBItems: dynamoDBItems.length,
         newEntries: newEntries.map(e => e.registration_number),
         updatedEntries: updatedEntries.map(e => e.registration_number),
         deletedEntries: deletedEntries.map(e => e.registration_number),
-        duplicateRegistrationNumbers: Array.from(duplicateRecords.keys())
+        duplicateRegistrationNumbers: Array.from(registrationNumberMap.entries())
+          .filter(([_, records]) => records.length > 1)
+          .map(([regNum]) => regNum)
       }
     };
   } catch (error) {
     console.error('Error in syncAirtableData:', error);
-    return {
-      success: false,
-      error: error.message
-    };
-  }
-}
-
-async function syncTypeformData() {
-  try {
-    console.log('Starting Typeform sync process...');
-
-    // Fetch data from both sources simultaneously
-    const [typeformResponses, dynamoDBItems] = await Promise.all([
-      fetchAllTypeformResponses(),
-      fetchAllFromDynamoDB('typeform_data')
-    ]);
-
-    console.log(`Fetched ${typeformResponses.length} responses from Typeform`);
-    console.log(`Fetched ${dynamoDBItems.length} items from DynamoDB`);
-
-    // Process Typeform responses using TypeformSchema
-    const processedTypeformResponses = typeformResponses
-      .map(response => new TypeformSchema(response))
-      .filter(schema => schema.isValid())
-      .map(schema => ({
-        registration_number: schema.registration_number,
-        data: schema.data
-      }));
-
-    console.log(`Processed ${processedTypeformResponses.length} valid responses from Typeform`);
-
-    // Track registration numbers to identify duplicates
-    const registrationNumberMap = new Map();
-    processedTypeformResponses.forEach(response => {
-      if (!registrationNumberMap.has(response.registration_number)) {
-        registrationNumberMap.set(response.registration_number, []);
-      }
-      registrationNumberMap.get(response.registration_number).push(response.data);
-    });
-
-    // Separate unique and duplicate records
-    const uniqueRecords = [];
-    const duplicateRecords = new Map();
-
-    registrationNumberMap.forEach((records, registrationNumber) => {
-      if (records.length === 1) {
-        uniqueRecords.push({
-          registration_number: registrationNumber,
-          data: records[0]
-        });
-      } else {
-        duplicateRecords.set(registrationNumber, records);
-      }
-    });
-
-    // Store duplicate records in error_data table
-    console.log(`\nStoring ${duplicateRecords.size} duplicate records in error_data table...`);
-    for (const [registrationNumber, records] of duplicateRecords) {
-      await storeDuplicateRecord(registrationNumber, 'typeform', records);
-    }
-
-    // Create maps for easier lookup
-    const typeformMap = new Map(
-      uniqueRecords.map(record => [record.registration_number, record])
-    );
-
-    const dynamoDBMap = new Map(
-      dynamoDBItems.map(item => [item.registration_number, item])
-    );
-
-    // Find new entries (in Typeform but not in DynamoDB)
-    const newEntries = uniqueRecords.filter(
-      record => !dynamoDBMap.has(record.registration_number)
-    );
-
-    // Find deleted entries (in DynamoDB but not in Typeform)
-    const deletedEntries = dynamoDBItems.filter(
-      item => !typeformMap.has(item.registration_number)
-    );
-
-    // Add new entries to DynamoDB
-    console.log(`\nAdding ${newEntries.length} new entries to DynamoDB...`);
-    for (const entry of newEntries) {
-      const command = new PutCommand({
-        TableName: 'typeform_data',
-        Item: {
-          registration_number: entry.registration_number,
-          data: entry.data
-        }
-      });
-      await docClient.send(command);
-      console.log(`Added entry with registration number: ${entry.registration_number}`);
-    }
-
-    // Delete removed entries from DynamoDB
-    console.log(`\nDeleting ${deletedEntries.length} entries from DynamoDB...`);
-    for (const entry of deletedEntries) {
-      const command = new DeleteCommand({
-        TableName: 'typeform_data',
-        Key: {
-          registration_number: entry.registration_number
-        }
-      });
-      await docClient.send(command);
-      console.log(`Deleted entry with registration number: ${entry.registration_number}`);
-    }
-
-    return {
-      success: true,
-      summary: {
-        totalTypeformResponses: typeformResponses.length,
-        validTypeformResponses: uniqueRecords.length,
-        totalDynamoDBItems: dynamoDBItems.length,
-        newEntries: newEntries.map(e => e.registration_number),
-        deletedEntries: deletedEntries.map(e => e.registration_number),
-        duplicateRegistrationNumbers: Array.from(duplicateRecords.keys())
-      }
-    };
-  } catch (error) {
-    console.error('Error in syncTypeformData:', error);
     return {
       success: false,
       error: error.message
