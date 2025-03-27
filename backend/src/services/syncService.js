@@ -15,6 +15,39 @@ const client = new DynamoDBClient({
 
 const docClient = DynamoDBDocumentClient.from(client);
 
+// Helper function to store duplicate records in error_data table
+async function storeDuplicateRecord(registrationNumber, type, records) {
+  try {
+    // Convert records to DynamoDB format
+    const formattedRecords = records.map(record => {
+      const formattedRecord = {};
+      for (const [key, value] of Object.entries(record)) {
+        if (typeof value === 'number') {
+          formattedRecord[key] = { N: value.toString() };
+        } else {
+          formattedRecord[key] = { S: value.toString() };
+        }
+      }
+      return formattedRecord;
+    });
+
+    const command = new PutCommand({
+      TableName: 'error_data',
+      Item: {
+        registration_number: registrationNumber,
+        type: type,
+        data: formattedRecords
+      }
+    });
+
+    await docClient.send(command);
+    console.log(`Stored duplicate record for ${registrationNumber} of type ${type}`);
+  } catch (error) {
+    console.error(`Error storing duplicate record for ${registrationNumber}:`, error);
+    throw error;
+  }
+}
+
 async function fetchAllFromDynamoDB(tableName) {
   const items = [];
   let lastEvaluatedKey = undefined;
@@ -83,30 +116,38 @@ async function syncAirtableData() {
     console.log(`Processed ${processedAirtableRecords.length} valid records from Airtable`);
 
     // Track registration numbers to identify duplicates
-    const registrationNumberCount = new Map();
+    const registrationNumberMap = new Map();
     processedAirtableRecords.forEach(record => {
-      if (record.registration_number) {
-        registrationNumberCount.set(
-          record.registration_number,
-          (registrationNumberCount.get(record.registration_number) || 0) + 1
-        );
+      if (!registrationNumberMap.has(record.registration_number)) {
+        registrationNumberMap.set(record.registration_number, []);
+      }
+      registrationNumberMap.get(record.registration_number).push(record.data);
+    });
+
+    // Separate unique and duplicate records
+    const uniqueRecords = [];
+    const duplicateRecords = new Map();
+
+    registrationNumberMap.forEach((records, registrationNumber) => {
+      if (records.length === 1) {
+        uniqueRecords.push({
+          registration_number: registrationNumber,
+          data: records[0]
+        });
+      } else {
+        duplicateRecords.set(registrationNumber, records);
       }
     });
 
-    // Filter out duplicates
-    const validAirtableRecords = processedAirtableRecords.filter(record => {
-      if (registrationNumberCount.get(record.registration_number) > 1) {
-        console.log('Found duplicate registration number:', record.registration_number);
-        return false;
-      }
-      return true;
-    });
-
-    console.log(`Found ${validAirtableRecords.length} valid records with unique registration numbers`);
+    // Store duplicate records in error_data table
+    console.log(`\nStoring ${duplicateRecords.size} duplicate records in error_data table...`);
+    for (const [registrationNumber, records] of duplicateRecords) {
+      await storeDuplicateRecord(registrationNumber, 'airtable', records);
+    }
 
     // Create maps for easier lookup
     const airtableMap = new Map(
-      validAirtableRecords.map(record => [record.registration_number, record])
+      uniqueRecords.map(record => [record.registration_number, record])
     );
 
     const dynamoDBMap = new Map(
@@ -114,7 +155,7 @@ async function syncAirtableData() {
     );
 
     // Find new entries (in Airtable but not in DynamoDB)
-    const newEntries = validAirtableRecords.filter(
+    const newEntries = uniqueRecords.filter(
       record => !dynamoDBMap.has(record.registration_number)
     );
 
@@ -124,7 +165,7 @@ async function syncAirtableData() {
     );
 
     // Find updated entries (in both but with different content)
-    const updatedEntries = validAirtableRecords.filter(record => {
+    const updatedEntries = uniqueRecords.filter(record => {
       const dynamoItem = dynamoDBMap.get(record.registration_number);
       if (!dynamoItem) return false;
       return !compareAirtableData(record.data, dynamoItem.data);
@@ -175,14 +216,12 @@ async function syncAirtableData() {
       success: true,
       summary: {
         totalAirtableRecords: airtableRecords.length,
-        validAirtableRecords: validAirtableRecords.length,
+        validAirtableRecords: uniqueRecords.length,
         totalDynamoDBItems: dynamoDBItems.length,
         newEntries: newEntries.map(e => e.registration_number),
         updatedEntries: updatedEntries.map(e => e.registration_number),
         deletedEntries: deletedEntries.map(e => e.registration_number),
-        duplicateRegistrationNumbers: Array.from(registrationNumberCount.entries())
-          .filter(([_, count]) => count > 1)
-          .map(([regNum, count]) => ({ registration_number: regNum, count }))
+        duplicateRegistrationNumbers: Array.from(duplicateRecords.keys())
       }
     };
   } catch (error) {
@@ -219,30 +258,38 @@ async function syncTypeformData() {
     console.log(`Processed ${processedTypeformResponses.length} valid responses from Typeform`);
 
     // Track registration numbers to identify duplicates
-    const registrationNumberCount = new Map();
+    const registrationNumberMap = new Map();
     processedTypeformResponses.forEach(response => {
-      if (response.registration_number) {
-        registrationNumberCount.set(
-          response.registration_number,
-          (registrationNumberCount.get(response.registration_number) || 0) + 1
-        );
+      if (!registrationNumberMap.has(response.registration_number)) {
+        registrationNumberMap.set(response.registration_number, []);
+      }
+      registrationNumberMap.get(response.registration_number).push(response.data);
+    });
+
+    // Separate unique and duplicate records
+    const uniqueRecords = [];
+    const duplicateRecords = new Map();
+
+    registrationNumberMap.forEach((records, registrationNumber) => {
+      if (records.length === 1) {
+        uniqueRecords.push({
+          registration_number: registrationNumber,
+          data: records[0]
+        });
+      } else {
+        duplicateRecords.set(registrationNumber, records);
       }
     });
 
-    // Filter out duplicates
-    const validTypeformResponses = processedTypeformResponses.filter(response => {
-      if (registrationNumberCount.get(response.registration_number) > 1) {
-        console.log('Found duplicate registration number:', response.registration_number);
-        return false;
-      }
-      return true;
-    });
-
-    console.log(`Found ${validTypeformResponses.length} valid responses with unique registration numbers`);
+    // Store duplicate records in error_data table
+    console.log(`\nStoring ${duplicateRecords.size} duplicate records in error_data table...`);
+    for (const [registrationNumber, records] of duplicateRecords) {
+      await storeDuplicateRecord(registrationNumber, 'typeform', records);
+    }
 
     // Create maps for easier lookup
     const typeformMap = new Map(
-      validTypeformResponses.map(response => [response.registration_number, response])
+      uniqueRecords.map(record => [record.registration_number, record])
     );
 
     const dynamoDBMap = new Map(
@@ -250,8 +297,8 @@ async function syncTypeformData() {
     );
 
     // Find new entries (in Typeform but not in DynamoDB)
-    const newEntries = validTypeformResponses.filter(
-      response => !dynamoDBMap.has(response.registration_number)
+    const newEntries = uniqueRecords.filter(
+      record => !dynamoDBMap.has(record.registration_number)
     );
 
     // Find deleted entries (in DynamoDB but not in Typeform)
@@ -290,13 +337,11 @@ async function syncTypeformData() {
       success: true,
       summary: {
         totalTypeformResponses: typeformResponses.length,
-        validTypeformResponses: validTypeformResponses.length,
+        validTypeformResponses: uniqueRecords.length,
         totalDynamoDBItems: dynamoDBItems.length,
         newEntries: newEntries.map(e => e.registration_number),
         deletedEntries: deletedEntries.map(e => e.registration_number),
-        duplicateRegistrationNumbers: Array.from(registrationNumberCount.entries())
-          .filter(([_, count]) => count > 1)
-          .map(([regNum, count]) => ({ registration_number: regNum, count }))
+        duplicateRegistrationNumbers: Array.from(duplicateRecords.keys())
       }
     };
   } catch (error) {
