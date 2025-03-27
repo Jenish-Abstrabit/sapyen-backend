@@ -50,6 +50,37 @@ async function fetchAllAirtableRecords() {
   }
 }
 
+async function updateAirtableRecord(recordId, updateData) {
+  try {
+    const response = await axios.patch(
+      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_ID}/${recordId}`,
+      {
+        fields: {
+          'Vial 1 Volume': updateData.vial1_volume,
+          'Vial 2 Volume': updateData.vial2_volume,
+          'Total Motility': updateData.total_motility,
+          'Morphology': updateData.morphology
+        }
+      },
+      {
+        headers: {
+          'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+
+    return response.data;
+  } catch (error) {
+    console.error('Error updating Airtable record:', error.message);
+    if (error.response) {
+      console.error('Error details:', error.response.data);
+    }
+    throw error;
+  }
+}
+
 module.exports = {
-  fetchAllAirtableRecords
+  fetchAllAirtableRecords,
+  updateAirtableRecord
 }; 

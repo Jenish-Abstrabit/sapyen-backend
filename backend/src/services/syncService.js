@@ -1,7 +1,7 @@
 const { DynamoDBClient } = require('@aws-sdk/client-dynamodb');
-const { DynamoDBDocumentClient, ScanCommand, PutCommand, DeleteCommand } = require('@aws-sdk/lib-dynamodb');
+const { DynamoDBDocumentClient, ScanCommand, PutCommand, DeleteCommand, GetCommand } = require('@aws-sdk/lib-dynamodb');
 const { fetchAllTypeformResponses } = require('./typeformService');
-const { fetchAllAirtableRecords } = require('./airtableService');
+const { fetchAllAirtableRecords, updateAirtableRecord } = require('./airtableService');
 const TypeformSchema = require('../schemas/TypeformSchema');
 const AirtableSchema = require('../schemas/AirtableSchema');
 
@@ -308,7 +308,56 @@ async function syncTypeformData() {
   }
 }
 
+async function updateAirtableDynamoDBRecord(registrationNumber, updateData) {
+  try {
+    // First, get the existing record to ensure it exists
+    const getCommand = new GetCommand({
+      TableName: 'airtable_data',
+      Key: {
+        registration_number: registrationNumber
+      }
+    });
+
+    const existingRecord = await docClient.send(getCommand);
+    if (!existingRecord.Item) {
+      throw new Error(`Record with registration number ${registrationNumber} not found in DynamoDB`);
+    }
+
+    // Update Airtable record
+    await updateAirtableRecord(updateData.record_id, updateData);
+
+    // Update DynamoDB record
+    const command = new PutCommand({
+      TableName: 'airtable_data',
+      Item: {
+        registration_number: registrationNumber,
+        data: {
+          record_id: updateData.record_id,
+          vial1_volume: updateData.vial1_volume,
+          vial2_volume: updateData.vial2_volume,
+          total_motility: updateData.total_motility,
+          morphology: updateData.morphology
+        }
+      }
+    });
+
+    await docClient.send(command);
+
+    return {
+      success: true,
+      message: `Successfully updated record for registration number ${registrationNumber}`
+    };
+  } catch (error) {
+    console.error('Error updating record:', error);
+    return {
+      success: false,
+      error: error.message
+    };
+  }
+}
+
 module.exports = {
   syncTypeformData,
-  syncAirtableData
+  syncAirtableData,
+  updateAirtableDynamoDBRecord
 }; 

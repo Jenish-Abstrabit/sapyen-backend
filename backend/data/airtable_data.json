@@ -1,7 +1,28 @@
 [
   {
+    "registration_number": "13O3778",
+    "data": {
+      "record_id": "recT2ksWG32qA8YjB",
+      "vial1_volume": "1.3",
+      "vial2_volume": "3.0",
+      "total_motility": 0.4,
+      "morphology": 0.04
+    }
+  },
+  {
+    "registration_number": "2317218",
+    "data": {
+      "record_id": "rec3XT9E3ih6CvMgk",
+      "vial1_volume": "3.9",
+      "vial2_volume": "3.8",
+      "total_motility": 0.06,
+      "morphology": 0.01
+    }
+  },
+  {
     "registration_number": "2316628",
     "data": {
+      "record_id": "recka8yYNcMjXS8XZ",
       "vial1_volume": "2.8",
       "vial2_volume": "3.8",
       "total_motility": 0,
@@ -11,6 +32,7 @@
   {
     "registration_number": "2316118",
     "data": {
+      "record_id": "recIzg3SzGKXsRaIf",
       "vial1_volume": "0.1",
       "vial2_volume": "3.8",
       "total_motility": 0.15,
@@ -20,6 +42,7 @@
   {
     "registration_number": "2316768",
     "data": {
+      "record_id": "recvkPbWQTdU9lmfy",
       "vial1_volume": "0.4",
       "vial2_volume": "3.7",
       "total_motility": 0.09,
@@ -29,6 +52,7 @@
   {
     "registration_number": "2316978",
     "data": {
+      "record_id": "recIGOkge3xndOPCb",
       "vial1_volume": "3.2",
       "vial2_volume": "3.8",
       "total_motility": 0.27,
@@ -38,6 +62,7 @@
   {
     "registration_number": "2316238",
     "data": {
+      "record_id": "recKnTvBvk7nyMArU",
       "vial1_volume": "2.0",
       "vial2_volume": "3.9",
       "total_motility": 0.33,
@@ -47,6 +72,7 @@
   {
     "registration_number": "2316708",
     "data": {
+      "record_id": "reccGbtDE84GltCHk",
       "vial1_volume": "4.1",
       "vial2_volume": "3.8",
       "total_motility": 0.14,
@@ -56,6 +82,7 @@
   {
     "registration_number": "53R7359",
     "data": {
+      "record_id": "recNVRDjmAqqkQXlU",
       "vial1_volume": "1.7",
       "vial2_volume": "2.6",
       "total_motility": 0,
@@ -65,6 +92,7 @@
   {
     "registration_number": "2316818",
     "data": {
+      "record_id": "recImFlVppUuljuR5",
       "vial1_volume": "0.1",
       "vial2_volume": "4.1",
       "total_motility": 0.2,
@@ -74,6 +102,7 @@
   {
     "registration_number": "2316928",
     "data": {
+      "record_id": "recKgYPwer5ThpPBa",
       "vial1_volume": "3.0",
       "vial2_volume": "3.7",
       "total_motility": 0.23,
@@ -83,6 +112,7 @@
   {
     "registration_number": "2316918",
     "data": {
+      "record_id": "reczVtQQL4gser6Vs",
       "vial1_volume": "2.1",
       "vial2_volume": "3.8",
       "total_motility": 0.11,
@@ -92,6 +122,7 @@
   {
     "registration_number": "2316588",
     "data": {
+      "record_id": "recOna6tfaoqWTo2Y",
       "vial1_volume": "0.6",
       "vial2_volume": "3.7",
       "total_motility": 0.23,
@@ -101,6 +132,7 @@
   {
     "registration_number": "2316028",
     "data": {
+      "record_id": "recS90ehXrzQw05XL",
       "vial1_volume": "4.8",
       "vial2_volume": "1.8",
       "total_motility": 0,
@@ -110,6 +142,7 @@
   {
     "registration_number": "2316728",
     "data": {
+      "record_id": "recA0QdDvKZXUyU7U",
       "vial1_volume": "4.1",
       "vial2_volume": "4.0",
       "total_motility": 0.1,
@@ -119,6 +152,7 @@
   {
     "registration_number": "2316338",
     "data": {
+      "record_id": "receGa9vqPi6nn6OO",
       "vial1_volume": "0.9",
       "vial2_volume": "3.7",
       "total_motility": 0.09,
@@ -128,6 +162,7 @@
   {
     "registration_number": "2316718",
     "data": {
+      "record_id": "recIlJiSL7T6PxU7T",
       "vial1_volume": "2.0",
       "vial2_volume": "3.8",
       "total_motility": 0.35,
@@ -137,6 +172,7 @@
   {
     "registration_number": "2316318",
     "data": {
+      "record_id": "recbXnAliPF8U4Nly",
       "vial1_volume": "5.3",
       "vial2_volume": "3.6",
       "total_motility": 0.02,
@@ -146,6 +182,7 @@
   {
     "registration_number": "2316328",
     "data": {
+      "record_id": "recLnpES9WMCgvqjE",
       "vial1_volume": "2.1",
       "vial2_volume": "3.8",
       "total_motility": 0.05,
@@ -155,6 +192,7 @@
   {
     "registration_number": "2316468",
     "data": {
+      "record_id": "recfTWGTw5EXaQztq",
       "vial1_volume": "7.8",
       "vial2_volume": "3.7",
       "total_motility": 0.07,
@@ -164,6 +202,7 @@
   {
     "registration_number": "53I1927",
     "data": {
+      "record_id": "reciPvB7C3ro1aqne",
       "vial1_volume": "2.1",
       "vial2_volume": "3.7",
       "total_motility": 0.35,
@@ -173,6 +212,7 @@
   {
     "registration_number": "48Q7184",
     "data": {
+      "record_id": "recpkxqheMrL6uyJS",
       "vial1_volume": "6.9",
       "vial2_volume": "3.8",
       "total_motility": 0.09,
@@ -182,6 +222,7 @@
   {
     "registration_number": "49J7737",
     "data": {
+      "record_id": "rec0S91KnJQW3RCjW",
       "vial1_volume": "0.3",
       "vial2_volume": "3.8",
       "total_motility": 0.29,
@@ -191,6 +232,7 @@
   {
     "registration_number": "63Z3746",
     "data": {
+      "record_id": "recUVLxeIjLahSTNV",
       "vial1_volume": "2.9",
       "vial2_volume": "3.8",
       "total_motility": 0.2,
@@ -200,6 +242,7 @@
   {
     "registration_number": "15Z6344",
     "data": {
+      "record_id": "rec9lxcjw4DO6gBC0",
       "vial1_volume": "1.4",
       "vial2_volume": "3.8",
       "total_motility": 0,
@@ -209,6 +252,7 @@
   {
     "registration_number": "34L7153",
     "data": {
+      "record_id": "rec23PQmdOq8nho4A",
       "vial1_volume": "1.9",
       "vial2_volume": "3.7",
       "total_motility": 0.06,
@@ -218,6 +262,7 @@
   {
     "registration_number": "57S9484",
     "data": {
+      "record_id": "recEyCYXa241Mpqhc",
       "vial1_volume": "3.8",
       "vial2_volume": "3.9",
       "total_motility": 0,
@@ -227,6 +272,7 @@
   {
     "registration_number": "31Z6456",
     "data": {
+      "record_id": "recr2ORzRDj3Aubyh",
       "vial1_volume": "0.4",
       "vial2_volume": "3.8",
       "total_motility": 0.06,
@@ -236,6 +282,7 @@
   {
     "registration_number": "65F2597",
     "data": {
+      "record_id": "recXqPX810CTiy53u",
       "vial1_volume": "1.9",
       "vial2_volume": "3.8",
       "total_motility": 0.18,
@@ -245,6 +292,7 @@
   {
     "registration_number": "87Y6298",
     "data": {
+      "record_id": "recsXDDNhEdZnUWCL",
       "vial1_volume": "4.0",
       "vial2_volume": "3.8",
       "total_motility": 0.42,
@@ -254,6 +302,7 @@
   {
     "registration_number": "99X7361",
     "data": {
+      "record_id": "recfDgP9CCZt7RuGx",
       "vial1_volume": "3.1",
       "vial2_volume": "3.7",
       "total_motility": 0.26,
@@ -263,6 +312,7 @@
   {
     "registration_number": "75J9358",
     "data": {
+      "record_id": "rectriBAxq9Cqw2ax",
       "vial1_volume": "2.3",
       "vial2_volume": "3.7",
       "total_motility": 0.17,
@@ -272,6 +322,7 @@
   {
     "registration_number": "85L4798",
     "data": {
+      "record_id": "recLtJxInTJyfW8qs",
       "vial1_volume": "0.4",
       "vial2_volume": "3.7",
       "total_motility": 0.28,
@@ -281,6 +332,7 @@
   {
     "registration_number": "77S2351",
     "data": {
+      "record_id": "rec3uoYp9HSacSy0o",
       "vial1_volume": "1.5",
       "vial2_volume": "3.8",
       "total_motility": 0,
@@ -290,6 +342,7 @@
   {
     "registration_number": "33X4533",
     "data": {
+      "record_id": "recnBWdgvprZJuGr6",
       "vial1_volume": "1.5",
       "vial2_volume": "3.7",
       "total_motility": 0.33,
@@ -299,6 +352,7 @@
   {
     "registration_number": "72U5318",
     "data": {
+      "record_id": "recVyH7WS5ofxlI5N",
       "vial1_volume": "1.2",
       "vial2_volume": "3.8",
       "total_motility": 0.27,
@@ -308,6 +362,7 @@
   {
     "registration_number": "34F8577",
     "data": {
+      "record_id": "recCUmHB2hcawhrnn",
       "vial1_volume": "2.1",
       "vial2_volume": "3.8",
       "total_motility": 0,
@@ -317,6 +372,7 @@
   {
     "registration_number": "89E4947",
     "data": {
+      "record_id": "recnGh4wrqcjw4J7a",
       "vial1_volume": "2.0",
       "vial2_volume": "3.8",
       "total_motility": 0.16,
@@ -326,6 +382,7 @@
   {
     "registration_number": "19E9338",
     "data": {
+      "record_id": "recUza0ghzXkT52Bd",
       "vial1_volume": "0.7",
       "vial2_volume": "3.8",
       "total_motility": 0.47,
@@ -335,6 +392,7 @@
   {
     "registration_number": "77E6625",
     "data": {
+      "record_id": "recr0dLxDEbGauq05",
       "vial1_volume": "5.5",
       "vial2_volume": "3.8",
       "total_motility": 0.1,
@@ -344,6 +402,7 @@
   {
     "registration_number": "15B9531",
     "data": {
+      "record_id": "recHXItA0g1iIo5ML",
       "vial1_volume": "0.7",
       "vial2_volume": "3.9",
       "total_motility": 0,
@@ -353,6 +412,7 @@
   {
     "registration_number": "15X7176",
     "data": {
+      "record_id": "recvckIX2sjFEv6CA",
       "vial1_volume": "3.6",
       "vial2_volume": "3.7",
       "total_motility": 0.09,
@@ -362,6 +422,7 @@
   {
     "registration_number": "31I8654",
     "data": {
+      "record_id": "recJJM9lMLgDqzshf",
       "vial1_volume": "3.6",
       "vial2_volume": "3.7",
       "total_motility": 0.33,
@@ -371,6 +432,7 @@
   {
     "registration_number": "18K4834",
     "data": {
+      "record_id": "recTuRLNX7YqlDUNn",
       "vial1_volume": "1.5",
       "vial2_volume": "3.9",
       "total_motility": 0,
@@ -380,6 +442,7 @@
   {
     "registration_number": "27J4711",
     "data": {
+      "record_id": "recTSZMx32YXRkXiR",
       "vial1_volume": "3.5",
       "vial2_volume": "3.8",
       "total_motility": 0.02,
@@ -389,6 +452,7 @@
   {
     "registration_number": "95C2112",
     "data": {
+      "record_id": "recPJna63hrp0XWag",
       "vial1_volume": "4.6",
       "vial2_volume": "2.9",
       "total_motility": 0.17,
@@ -398,6 +462,7 @@
   {
     "registration_number": "61W8892",
     "data": {
+      "record_id": "recxov9Ti5ueCy6cL",
       "vial1_volume": "3.5",
       "vial2_volume": "3.7",
       "total_motility": 0.25,
@@ -407,6 +472,7 @@
   {
     "registration_number": "75B9153",
     "data": {
+      "record_id": "recg6MyUVuNi8Bnja",
       "vial1_volume": "1.4",
       "vial2_volume": "3.8",
       "total_motility": 0,
@@ -416,6 +482,7 @@
   {
     "registration_number": "81E8483",
     "data": {
+      "record_id": "recqx00AjxyArPXEH",
       "vial1_volume": "0.3",
       "vial2_volume": "3.8",
       "total_motility": 0,
@@ -425,6 +492,7 @@
   {
     "registration_number": "53O7364",
     "data": {
+      "record_id": "recEs2PIeMHpNX21E",
       "vial1_volume": "4.2",
       "vial2_volume": "1.5",
       "total_motility": 0,
@@ -434,6 +502,7 @@
   {
     "registration_number": "15I3432",
     "data": {
+      "record_id": "reclsNW2W4YmgjOLF",
       "vial1_volume": "0.1",
       "vial2_volume": "3.7",
       "total_motility": 0,
@@ -443,6 +512,7 @@
   {
     "registration_number": "67G9781",
     "data": {
+      "record_id": "recEWLYk06wPtZzgd",
       "vial1_volume": "0.4",
       "vial2_volume": "3.9",
       "total_motility": 0,
@@ -452,6 +522,7 @@
   {
     "registration_number": "28s4441",
     "data": {
+      "record_id": "recmFXNR9LXPjlZ9a",
       "vial1_volume": "4.2",
       "vial2_volume": "3.9",
       "total_motility": 0,
@@ -461,6 +532,7 @@
   {
     "registration_number": "81D8946",
     "data": {
+      "record_id": "recby38hNf9O6bYo6",
       "vial1_volume": "1.3",
       "vial2_volume": "4.0",
       "total_motility": 0.0184,
@@ -470,6 +542,7 @@
   {
     "registration_number": "41V5195",
     "data": {
+      "record_id": "recYBCsd8F3ql7tRt",
       "vial1_volume": "3.4",
       "vial2_volume": "3.7",
       "total_motility": 0,
@@ -479,6 +552,7 @@
   {
     "registration_number": "18K6525",
     "data": {
+      "record_id": "recwWNJdXgtSp5kM8",
       "vial1_volume": "0.1",
       "vial2_volume": "3.7",
       "total_motility": 0,
@@ -488,6 +562,7 @@
   {
     "registration_number": "85J7178",
     "data": {
+      "record_id": "recxr3aseW3nce068",
       "vial1_volume": "1.8",
       "vial2_volume": "3.7",
       "total_motility": 0,
@@ -497,6 +572,7 @@
   {
     "registration_number": "68H6928",
     "data": {
+      "record_id": "recDKhaRZ91ztHK2K",
       "vial1_volume": "3.2",
       "vial2_volume": "3.8",
       "total_motility": 0,
@@ -506,6 +582,7 @@
   {
     "registration_number": "54X1111",
     "data": {
+      "record_id": "recYIpyXW9g9di9Ls",
       "vial1_volume": "0.5",
       "vial2_volume": "3.9",
       "total_motility": 0,
@@ -515,6 +592,7 @@
   {
     "registration_number": "98F9179",
     "data": {
+      "record_id": "rec9isxp8JHtkEB49",
       "vial1_volume": "0",
       "vial2_volume": "4.0",
       "total_motility": 0,
@@ -524,6 +602,7 @@
   {
     "registration_number": "78P8862",
     "data": {
+      "record_id": "recsJA5jGhbb5jrr7",
       "vial1_volume": "2.6",
       "vial2_volume": "3.8",
       "total_motility": 0.19,
@@ -533,6 +612,7 @@
   {
     "registration_number": "76T1548",
     "data": {
+      "record_id": "recuMJCjcKFvgQjMM",
       "vial1_volume": "4.2",
       "vial2_volume": "4.0",
       "total_motility": 0.33,
@@ -542,6 +622,7 @@
   {
     "registration_number": "63Q9246",
     "data": {
+      "record_id": "recTbEvQsurdLGqTj",
       "vial1_volume": "0.6",
       "vial2_volume": "3.8",
       "total_motility": 0.15,
@@ -551,6 +632,7 @@
   {
     "registration_number": "95V4831",
     "data": {
+      "record_id": "recsQsI0yqOl0hcPb",
       "vial1_volume": "2.8",
       "vial2_volume": "4.0",
       "total_motility": 0,
@@ -560,6 +642,7 @@
   {
     "registration_number": "83A3739",
     "data": {
+      "record_id": "recZxkYIgqx7l8FW2",
       "vial1_volume": "5.0",
       "vial2_volume": "4.0",
       "total_motility": 0,
@@ -569,6 +652,7 @@
   {
     "registration_number": "64H8593",
     "data": {
+      "record_id": "recHbTHWpkzXftxU0",
       "vial1_volume": "0.1",
       "vial2_volume": "3.1",
       "total_motility": 0,
@@ -578,6 +662,7 @@
   {
     "registration_number": "41U9554",
     "data": {
+      "record_id": "recwVLsX4zooWUA7w",
       "vial1_volume": "2.5",
       "vial2_volume": "4.0",
       "total_motility": 0,
@@ -587,6 +672,7 @@
   {
     "registration_number": "92W5325",
     "data": {
+      "record_id": "rec11tb9PQSjlPNR0",
       "vial1_volume": "6.2",
       "vial2_volume": "3.8",
       "total_motility": 0,
@@ -596,6 +682,7 @@
   {
     "registration_number": "37N3824",
     "data": {
+      "record_id": "recXA2FeZJNkCBbtz",
       "vial1_volume": "1.5",
       "vial2_volume": "3.7",
       "total_motility": 0,
@@ -605,6 +692,7 @@
   {
     "registration_number": "24U9488",
     "data": {
+      "record_id": "recSHX8ccB3cUA8fr",
       "vial1_volume": "0.6",
       "vial2_volume": "3.8",
       "total_motility": 0,
@@ -614,6 +702,7 @@
   {
     "registration_number": "57T6112",
     "data": {
+      "record_id": "rechkEscB1AZgAxQk",
       "vial1_volume": "0.8",
       "vial2_volume": "3.8",
       "total_motility": 0.15,
@@ -623,6 +712,7 @@
   {
     "registration_number": "62Y2191",
     "data": {
+      "record_id": "rec2OMEfEVGgX4aAb",
       "vial1_volume": "1.8",
       "vial2_volume": "3.8",
       "total_motility": 0.13,
@@ -632,6 +722,7 @@
   {
     "registration_number": "98L1441",
     "data": {
+      "record_id": "rec5KmHDrfo4YoEYA",
       "vial1_volume": "2.4",
       "vial2_volume": "4.1",
       "total_motility": 0.14,
@@ -641,6 +732,7 @@
   {
     "registration_number": "99I5243",
     "data": {
+      "record_id": "rec6mJnoLzg9hob4v",
       "vial1_volume": "3.2",
       "vial2_volume": "1.8",
       "total_motility": 0,
@@ -650,6 +742,7 @@
   {
     "registration_number": "88J9778",
     "data": {
+      "record_id": "reckY2DLT9E2gR290",
       "vial1_volume": "2.6",
       "vial2_volume": "4.8",
       "total_motility": 0.15,
@@ -659,6 +752,7 @@
   {
     "registration_number": "84R2454",
     "data": {
+      "record_id": "recB27lEGG8PrfyAI",
       "vial1_volume": "1.0",
       "vial2_volume": "4.0",
       "total_motility": 0,
@@ -668,6 +762,7 @@
   {
     "registration_number": "75S3874",
     "data": {
+      "record_id": "rec0RSefBpmOQINIS",
       "vial1_volume": "1.8",
       "vial2_volume": "4.0",
       "total_motility": 0,
@@ -677,6 +772,7 @@
   {
     "registration_number": "82D2673",
     "data": {
+      "record_id": "reckImZ5u6f3C8Tm6",
       "vial1_volume": "4.1",
       "vial2_volume": "1.6",
       "total_motility": 0,
@@ -686,6 +782,7 @@
   {
     "registration_number": "48Q8579",
     "data": {
+      "record_id": "recv02AXGNMOZ3x7v",
       "vial1_volume": "0.3",
       "vial2_volume": "3.9",
       "total_motility": 0.14,
@@ -695,6 +792,7 @@
   {
     "registration_number": "69Y9537",
     "data": {
+      "record_id": "recmacN9dRBBcApov",
       "vial1_volume": "3.7",
       "vial2_volume": "4.1",
       "total_motility": 0.16,
@@ -704,6 +802,7 @@
   {
     "registration_number": "19K6348",
     "data": {
+      "record_id": "recZXoT5Rg9Bkkj9Y",
       "vial1_volume": "3.4",
       "vial2_volume": "4.1",
       "total_motility": 0.17,
@@ -713,6 +812,7 @@
   {
     "registration_number": "11E4793",
     "data": {
+      "record_id": "recgafOGbjM8c0S3J",
       "vial1_volume": "0",
       "vial2_volume": "3.9",
       "total_motility": 0.04,
@@ -722,6 +822,7 @@
   {
     "registration_number": "67G9246",
     "data": {
+      "record_id": "rec5t3ZLTulrQAaci",
       "vial1_volume": "0.7",
       "vial2_volume": "3.6",
       "total_motility": 0.03,
@@ -731,6 +832,7 @@
   {
     "registration_number": "82G7128",
     "data": {
+      "record_id": "recKtHMLNnoY6phRd",
       "vial1_volume": "2.4",
       "vial2_volume": "3.5",
       "total_motility": 0.09,
@@ -740,6 +842,7 @@
   {
     "registration_number": "68D4496",
     "data": {
+      "record_id": "recSpq3FPPFBGot54",
       "vial1_volume": "3.8",
       "vial2_volume": "3.8",
       "total_motility": 0,
@@ -749,6 +852,7 @@
   {
     "registration_number": "15S6321",
     "data": {
+      "record_id": "recWqTMETqUbFB8eA",
       "vial1_volume": "1.4",
       "vial2_volume": "4.1",
       "total_motility": 0.09,
@@ -758,6 +862,7 @@
   {
     "registration_number": "53U2172",
     "data": {
+      "record_id": "recnVpp2uQgmHfL9N",
       "vial1_volume": "2.1",
       "vial2_volume": "3.8",
       "total_motility": 0.04,
@@ -767,6 +872,7 @@
   {
     "registration_number": "36W7816",
     "data": {
+      "record_id": "rec6FUZriknE07kkQ",
       "vial1_volume": "2.8",
       "vial2_volume": "3.8",
       "total_motility": 0.1,
@@ -776,6 +882,7 @@
   {
     "registration_number": "24V3271",
     "data": {
+      "record_id": "recl9eCzqnHiOI784",
       "vial1_volume": "3.3",
       "vial2_volume": "3.9",
       "total_motility": 0.01,
@@ -785,6 +892,7 @@
   {
     "registration_number": "14S4446",
     "data": {
+      "record_id": "rec2ks6vH7EtkMbqY",
       "vial1_volume": "2.4",
       "vial2_volume": "3.9",
       "total_motility": 0.11,
@@ -794,6 +902,7 @@
   {
     "registration_number": "53Q6795",
     "data": {
+      "record_id": "rec3avRab3QBN4hui",
       "vial1_volume": "0.7",
       "vial2_volume": "3.8",
       "total_motility": 0.19,
@@ -803,6 +912,7 @@
   {
     "registration_number": "74X5435",
     "data": {
+      "record_id": "rechjMY7XCdxpkj0c",
       "vial1_volume": "2.8",
       "vial2_volume": "4.0",
       "total_motility": 0,
@@ -812,6 +922,7 @@
   {
     "registration_number": "75R2125",
     "data": {
+      "record_id": "recNmGYc8RdFgaCMQ",
       "vial1_volume": "5.0",
       "vial2_volume": "4.0",
       "total_motility": 0.06,
@@ -821,6 +932,7 @@
   {
     "registration_number": "93G8672",
     "data": {
+      "record_id": "recaYiQ593bQt7CuO",
       "vial1_volume": "4.3",
       "vial2_volume": "4.0",
       "total_motility": 0,
@@ -830,6 +942,7 @@
   {
     "registration_number": "77R4325",
     "data": {
+      "record_id": "recwTWZJrC7Ir5L0y",
       "vial1_volume": "0.9",
       "vial2_volume": "3.8",
       "total_motility": 0.2,
@@ -839,6 +952,7 @@
   {
     "registration_number": "37Y9641",
     "data": {
+      "record_id": "rec0TYKI5E9EiWupk",
       "vial1_volume": "<0.01",
       "vial2_volume": "3.8",
       "total_motility": 0.04,
@@ -848,6 +962,7 @@
   {
     "registration_number": "19N4945",
     "data": {
+      "record_id": "rec9S78tomc0d01IB",
       "vial1_volume": "1.6",
       "vial2_volume": "4.0",
       "total_motility": 0.18,
@@ -857,6 +972,7 @@
   {
     "registration_number": "39X8343",
     "data": {
+      "record_id": "recZYu94EEVkBA6Bn",
       "vial1_volume": "2.3",
       "vial2_volume": "3.9",
       "total_motility": 0.18,
@@ -866,6 +982,7 @@
   {
     "registration_number": "93F9299",
     "data": {
+      "record_id": "rect8TdcxfDNYRvOZ",
       "vial1_volume": "2.2",
       "vial2_volume": "3.8",
       "total_motility": 0,
@@ -875,6 +992,7 @@
   {
     "registration_number": "42U3916",
     "data": {
+      "record_id": "recVSFUPyEVOjl5Fi",
       "vial1_volume": "4.6",
       "vial2_volume": "4.1",
       "total_motility": 0.05,
@@ -884,6 +1002,7 @@
   {
     "registration_number": "79I3164",
     "data": {
+      "record_id": "rec1YLjuopHJnzg8b",
       "vial1_volume": "1.5",
       "vial2_volume": "3.9",
       "total_motility": 0.2,
@@ -893,6 +1012,7 @@
   {
     "registration_number": "59X8919",
     "data": {
+      "record_id": "recLceXgJ5jtqLA15",
       "vial1_volume": "1.4",
       "vial2_volume": "3.9",
       "total_motility": 0.16,
@@ -902,6 +1022,7 @@
   {
     "registration_number": "16N8177",
     "data": {
+      "record_id": "recd7hsJrqK5fZnPM",
       "vial1_volume": "N/A",
       "vial2_volume": "N/A",
       "total_motility": 0,
@@ -911,6 +1032,7 @@
   {
     "registration_number": "42Y6255",
     "data": {
+      "record_id": "rec2BB3BQWBLIPSxB",
       "vial1_volume": "2.8",
       "vial2_volume": "4.0",
       "total_motility": 0.38,
@@ -920,6 +1042,7 @@
   {
     "registration_number": "95K7892",
     "data": {
+      "record_id": "recgwDTqSDdv0sS96",
       "vial1_volume": "2.3",
       "vial2_volume": "4.0",
       "total_motility": 0.24,
@@ -929,6 +1052,7 @@
   {
     "registration_number": "98W6765",
     "data": {
+      "record_id": "recoTygTAH8A9iG94",
       "vial1_volume": "0.9",
       "vial2_volume": "4.0",
       "total_motility": 0.06,
@@ -938,6 +1062,7 @@
   {
     "registration_number": "82U6639",
     "data": {
+      "record_id": "recdSHKFgHd1ypEKR",
       "vial1_volume": "3.0",
       "vial2_volume": "4.0",
       "total_motility": 0.03,
@@ -947,6 +1072,7 @@
   {
     "registration_number": "66L8657",
     "data": {
+      "record_id": "recFeEJy3n95ri48W",
       "vial1_volume": "1.3",
       "vial2_volume": "3.9",
       "total_motility": 0.21,
@@ -956,6 +1082,7 @@
   {
     "registration_number": "83I3648",
     "data": {
+      "record_id": "recCqzI5rHoP4rlbZ",
       "vial1_volume": "2.4",
       "vial2_volume": "4.0",
       "total_motility": 0.21,
@@ -965,6 +1092,7 @@
   {
     "registration_number": "44T4825",
     "data": {
+      "record_id": "recZszjK2Cxvr4sg1",
       "vial1_volume": "3.1",
       "vial2_volume": "3.9",
       "total_motility": 0,
@@ -974,6 +1102,7 @@
   {
     "registration_number": "44R1986",
     "data": {
+      "record_id": "recrbXiIMHHmOme5i",
       "vial1_volume": "1.8",
       "vial2_volume": "3.9",
       "total_motility": 0,
@@ -983,6 +1112,7 @@
   {
     "registration_number": "11M4718",
     "data": {
+      "record_id": "rec8u3c1AJqUB4zJ6",
       "vial1_volume": "1.0",
       "vial2_volume": "3.8",
       "total_motility": 0.31,
@@ -992,6 +1122,7 @@
   {
     "registration_number": "86T8743",
     "data": {
+      "record_id": "recFsAdAlaUkFrbAv",
       "vial1_volume": "1.0",
       "vial2_volume": "3.8",
       "total_motility": 0.2,
@@ -1001,6 +1132,7 @@
   {
     "registration_number": "89K3482",
     "data": {
+      "record_id": "recYeUOeIJSBL0hqz",
       "vial1_volume": "1.3",
       "vial2_volume": "3.9",
       "total_motility": 0.17,
@@ -1010,6 +1142,7 @@
   {
     "registration_number": "95H1878",
     "data": {
+      "record_id": "recTRVjQqEFiJvtEU",
       "vial1_volume": "5.8",
       "vial2_volume": "0",
       "total_motility": 0,
@@ -1019,6 +1152,7 @@
   {
     "registration_number": "95H1879",
     "data": {
+      "record_id": "recUg2xGk9ycVkTts",
       "vial1_volume": "5.8",
       "vial2_volume": "0",
       "total_motility": 0,
@@ -1028,6 +1162,7 @@
   {
     "registration_number": "62O7451",
     "data": {
+      "record_id": "recocdIJLC8Zn8fWy",
       "vial1_volume": "5.3",
       "vial2_volume": "4.0",
       "total_motility": 0,
@@ -1037,6 +1172,7 @@
   {
     "registration_number": "57D4699",
     "data": {
+      "record_id": "recZ5IIQ92bHnrBEQ",
       "vial1_volume": "2.4",
       "vial2_volume": "3.8",
       "total_motility": 0.07,
@@ -1046,6 +1182,7 @@
   {
     "registration_number": "97P7111",
     "data": {
+      "record_id": "recH0wfvmIsJbJBOM",
       "vial1_volume": "2.5",
       "vial2_volume": "2.9",
       "total_motility": 0.24,
@@ -1055,6 +1192,7 @@
   {
     "registration_number": "65e3959",
     "data": {
+      "record_id": "recns3k4piGIw8Tkp",
       "vial1_volume": "1.3",
       "vial2_volume": "3.8",
       "total_motility": 0.17,
@@ -1064,6 +1202,7 @@
   {
     "registration_number": "98k3656",
     "data": {
+      "record_id": "recNxSIRcoZp77TYL",
       "vial1_volume": "0.2",
       "vial2_volume": "3.8",
       "total_motility": 0.11,
@@ -1073,6 +1212,7 @@
   {
     "registration_number": "85S1345",
     "data": {
+      "record_id": "recWMDUeA0v1bWnIB",
       "vial1_volume": "3.7",
       "vial2_volume": "3.8",
       "total_motility": 0.17,
@@ -1082,6 +1222,7 @@
   {
     "registration_number": "28Y2216",
     "data": {
+      "record_id": "recWTU08d89eeWPnZ",
       "vial1_volume": "3.7",
       "vial2_volume": "3.9",
       "total_motility": 0.09,
@@ -1091,6 +1232,7 @@
   {
     "registration_number": "52o4368",
     "data": {
+      "record_id": "reco23SCPosyXniFD",
       "vial1_volume": "0",
       "vial2_volume": "3.7",
       "total_motility": 0.01,
@@ -1100,6 +1242,7 @@
   {
     "registration_number": "86B6953",
     "data": {
+      "record_id": "recoB8Tq111XdcqSH",
       "vial1_volume": "<0.01",
       "vial2_volume": "6.0",
       "total_motility": 0.05,
@@ -1109,6 +1252,7 @@
   {
     "registration_number": "95O7643",
     "data": {
+      "record_id": "recj8upFo07U0ndb2",
       "vial1_volume": "2.1",
       "vial2_volume": "3.8",
       "total_motility": 0.2,
@@ -1118,6 +1262,7 @@
   {
     "registration_number": "45Z7267",
     "data": {
+      "record_id": "receOsY9KAVQrvNyR",
       "vial1_volume": "1.7",
       "vial2_volume": "3.8",
       "total_motility": 0.03,
@@ -1127,6 +1272,7 @@
   {
     "registration_number": "42Z8172",
     "data": {
+      "record_id": "rec1KBPPST4rvnzBk",
       "vial1_volume": "0.9",
       "vial2_volume": "3.8",
       "total_motility": 0,
@@ -1136,6 +1282,7 @@
   {
     "registration_number": "93Q2723",
     "data": {
+      "record_id": "rechRT2k0FQPBp6Hu",
       "vial1_volume": "2.6",
       "vial2_volume": "3.9",
       "total_motility": 0.15,
@@ -1145,6 +1292,7 @@
   {
     "registration_number": "59E4597",
     "data": {
+      "record_id": "recSFuavVA5ZFVeu0",
       "vial1_volume": "<0.1 mL",
       "vial2_volume": "3.8 mL",
       "total_motility": 0.23,
@@ -1154,6 +1302,7 @@
   {
     "registration_number": "43G2991",
     "data": {
+      "record_id": "reccgVl3ddudPDBNp",
       "vial1_volume": "4.0",
       "vial2_volume": "2.9",
       "total_motility": 0.44,
@@ -1163,6 +1312,7 @@
   {
     "registration_number": "96Y8763",
     "data": {
+      "record_id": "recMxRk9tQ2sg4bOb",
       "vial1_volume": "3.0",
       "vial2_volume": "3.8",
       "total_motility": 0.13,
@@ -1172,6 +1322,7 @@
   {
     "registration_number": "63o9721",
     "data": {
+      "record_id": "rec7nq8U0KJFQr5Ik",
       "vial1_volume": "2.9",
       "vial2_volume": "3.8",
       "total_motility": 0.09,
@@ -1181,6 +1332,7 @@
   {
     "registration_number": "27o9921",
     "data": {
+      "record_id": "recwwEgXMO4LEizIi",
       "vial1_volume": "1.1",
       "vial2_volume": "3.9",
       "total_motility": 0,
@@ -1190,6 +1342,7 @@
   {
     "registration_number": "76G6861",
     "data": {
+      "record_id": "recj7qq4LULRPy4Hg",
       "vial1_volume": "3.0",
       "vial2_volume": "3.9",
       "total_motility": 0.16,
