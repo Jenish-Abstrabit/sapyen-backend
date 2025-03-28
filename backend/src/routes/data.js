@@ -16,9 +16,14 @@ router.get('/fetchMergedData', verifyToken, async (req, res) => {
       });
     }
 
+    // Separate entries with no Typeform data into error_data
+    const data = result.data.filter(item => Object.keys(item.typeform_data).length > 0);
+    const error_data = result.data.filter(item => Object.keys(item.typeform_data).length === 0);
+
     res.json({
       success: true,
-      data: result.data
+      data,
+      error_data
     });
   } catch (error) {
     console.error('Error in fetchMergedData route:', error);
